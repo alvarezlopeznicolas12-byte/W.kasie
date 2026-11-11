@@ -87,7 +87,7 @@ footer{padding:24px 0 40px;color:var(--mu);font-size:13px;border-top:1px solid v
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
-var SUPABASE_URL="https://sfrfnnfkoyfjosovgsea.supabase.co",SUPABASE_KEY="sb_publishable__AWjvzCJX1O5TEv39dnku3w_x8XWG53a",sb=null,ch=null,items=[],editId=null,cols=[];
+var SUPABASE_URL="https://sfrfnnfkoyfjosovgsea.supabase.co",SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmcmZubmZrb3lmam9zb3Znc2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0Mjk5NTAsImV4cCI6MjExMDAwNTk1MH0.FTBEKVY5UQ3QZ7qVMcMNFpbujkiXq70oiu-ClFkwclk",sb=null,ch=null,items=[],editId=null,cols=[];
 function load(){return sb.from("prendas").select("*").order("created_at",{ascending:false}).then(function(r){if(r.error){alert("No se pudo cargar: "+r.error.message);return}items=r.data;render()})}
 function chips(){$("cc").innerHTML=cols.map(function(c,n){return "<span class='chip'>"+esc(c)+"<button type='button' data-x='"+n+"' aria-label='Quitar "+esc(c)+"'>×</button></span>"}).join("")}
 function addCol(){$("ci").value.split(",").forEach(function(v){v=v.trim();if(v&&!cols.some(function(c){return c.toLowerCase()===v.toLowerCase()}))cols.push(v)});$("ci").value="";chips()}
